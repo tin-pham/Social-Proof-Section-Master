@@ -2,11 +2,9 @@
 
 body{
     padding: $pd;
-    width: 100vw;
     > div{
-        padding: $pd - 0.5rem;
-        min-width: 375px;
-        max-width: 500px;
+        width: 100%;
+        padding: $pd - 0.5rem 0;
     }
 
     @include flexCenter(column, center);
@@ -53,7 +51,7 @@ body{
 .heading{
     text-align: center;
     .header{
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: $dark-purple;
         line-height: 2.75rem;
     }
@@ -63,6 +61,10 @@ body{
         color: $dark-gray-purple;
         line-height: $lh;
         font-weight: $medium;
+    }
+
+    @include desktop{
+        text-align: left;
     }
 }
 
