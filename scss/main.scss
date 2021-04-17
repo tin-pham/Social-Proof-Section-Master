@@ -1,0 +1,165 @@
+@import './default', './config';
+
+body{
+    padding: $pd;
+    width: 100vw;
+    > div{
+        padding: $pd - 0.5rem;
+        min-width: 375px;
+        max-width: 500px;
+    }
+
+    @include flexCenter(column, center);
+
+    
+
+    &::before{
+        content: url(../images/bg-pattern-top-mobile.svg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &::after{
+        content: url(../images/bg-pattern-bottom-mobile.svg);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    @include desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        > div{
+            min-width: none;
+            max-width: none;
+        }
+
+        &::before{
+            content: url(../images/bg-pattern-top-desktop.svg);
+        }
+
+        &::after{
+            content: url(../images/bg-pattern-bottom-desktop.svg);
+        }
+        
+    }
+}
+
+
+.heading{
+    text-align: center;
+    .header{
+        font-size: 3rem;
+        color: $dark-purple;
+        line-height: 2.75rem;
+    }
+
+    &-body{
+        margin-top: $mg;
+        color: $dark-gray-purple;
+        line-height: $lh;
+        font-weight: $medium;
+    }
+}
+
+.ratings{
+    text-align: center;
+    padding: $pd;
+
+    > div{
+        margin: $mg;
+        background: $light-gray-purple;
+        border-radius: 10px;
+        *{
+            padding: $pd - 1.5rem 5px;
+        }
+
+        @include desktop{
+            img{
+                float: left;
+            }
+        }
+    }
+
+    @include desktop{
+        margin-left: 3rem;
+        max-width: 700px;
+        
+        > div{
+            padding: $pd * 1/2;
+        }
+        > div:nth-child(2){
+            position: relative;
+            transform: translateX(10%);
+        }
+
+        > div:nth-child(3){
+            position: relative;
+            transform: translateX(20%);
+        }
+
+
+    }
+}
+
+.reviews{
+    margin: 0 auto;
+    
+
+    .review{
+        background: $dark-purple;
+        color: $white;
+        padding: $pd;
+        margin: $mg 0;
+        border-radius: 10px;
+        .name{
+            line-height: $lh;
+            // Stop text wrap around image
+            overflow: hidden ; 
+            img{
+                float: left;
+                transform: scale(.5);
+                border-radius: 50%;
+                padding-right: .5em;
+            }
+            &-header{
+                padding-top: 1.5em;
+                @include desktop{
+                    padding-top: .6em;
+                }
+            }
+
+            &-verify{
+                color: $soft-pink;
+            }
+
+
+        }
+        &-body{
+            line-height: $lh + .5rem;
+            color: $light-gray-purple;
+        }     
+    }
+
+    @include desktop{
+        @include flexCenter(row, space-around);
+        grid-column: 1 / -1;
+        > div{
+            width: 30%;
+        }
+        > div:nth-child(1){
+            position: relative;
+            transform: translateY(-20%);
+        }
+
+        > div:nth-child(2){
+            position: relative;
+            transform: translateY(-10%);
+        }
+    }
+    
+}

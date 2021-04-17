@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+}
+
+@media (min-width: 1000px) {
+  * {
+    font-size: 18.75px;
+  }
+}
+
+body {
+  padding: 2rem;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > div {
+  padding: 1.5rem;
+  min-width: 375px;
+  max-width: 500px;
+}
+
+body::before {
+  content: url(../images/bg-pattern-top-mobile.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body::after {
+  content: url(../images/bg-pattern-bottom-mobile.svg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+@media (min-width: 1000px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  body > div {
+    min-width: none;
+    max-width: none;
+  }
+  body::before {
+    content: url(../images/bg-pattern-top-desktop.svg);
+  }
+  body::after {
+    content: url(../images/bg-pattern-bottom-desktop.svg);
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading .header {
+  font-size: 3rem;
+  color: #502050;
+  line-height: 2.75rem;
+}
+
+.heading-body {
+  margin-top: 1rem;
+  color: #937b92;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.ratings {
+  text-align: center;
+  padding: 2rem;
+}
+
+.ratings > div {
+  margin: 1rem;
+  background: #f7f2f7;
+  border-radius: 10px;
+}
+
+.ratings > div * {
+  padding: 0.5rem 5px;
+}
+
+@media (min-width: 1000px) {
+  .ratings > div img {
+    float: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  .ratings {
+    margin-left: 3rem;
+    max-width: 700px;
+  }
+  .ratings > div {
+    padding: 1rem;
+  }
+  .ratings > div:nth-child(2) {
+    position: relative;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  .ratings > div:nth-child(3) {
+    position: relative;
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+}
+
+.reviews {
+  margin: 0 auto;
+}
+
+.reviews .review {
+  background: #502050;
+  color: white;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+.reviews .review .name {
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+
+.reviews .review .name img {
+  float: left;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  border-radius: 50%;
+  padding-right: .5em;
+}
+
+.reviews .review .name-header {
+  padding-top: 1.5em;
+}
+
+@media (min-width: 1000px) {
+  .reviews .review .name-header {
+    padding-top: .6em;
+  }
+}
+
+.reviews .review .name-verify {
+  color: #ee68a4;
+}
+
+.reviews .review-body {
+  line-height: 2rem;
+  color: #f7f2f7;
+}
+
+@media (min-width: 1000px) {
+  .reviews {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-column: 1 / -1;
+  }
+  .reviews > div {
+    width: 30%;
+  }
+  .reviews > div:nth-child(1) {
+    position: relative;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  .reviews > div:nth-child(2) {
+    position: relative;
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+  }
+}
+/*# sourceMappingURL=main.css.map */
